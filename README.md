@@ -6,7 +6,7 @@ A Minecraft Bedrock Edition external hack | 1.19.31 supported
 
 ## Features
 
--timer(undetected - hive(under 2000))
+-timer(undetected - hive(under 1200))
 
 -reach(undetected - hive)
 
