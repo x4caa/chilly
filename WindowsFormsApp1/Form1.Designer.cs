@@ -48,7 +48,6 @@ namespace WindowsFormsApp1
             this.checkbox_step = new System.Windows.Forms.CheckBox();
             this.nametext = new System.Windows.Forms.TextBox();
             this.namebutton = new System.Windows.Forms.Button();
-            this.hitbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackbar_timer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackbar_reach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zpos)).BeginInit();
@@ -272,24 +271,12 @@ namespace WindowsFormsApp1
             this.namebutton.UseVisualStyleBackColor = true;
             this.namebutton.Click += new System.EventHandler(this.namebutton_Click);
             // 
-            // hitbox
-            // 
-            this.hitbox.AutoSize = true;
-            this.hitbox.Location = new System.Drawing.Point(146, 104);
-            this.hitbox.Name = "hitbox";
-            this.hitbox.Size = new System.Drawing.Size(54, 17);
-            this.hitbox.TabIndex = 23;
-            this.hitbox.Text = "hitbox";
-            this.hitbox.UseVisualStyleBackColor = true;
-            this.hitbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(472, 242);
-            this.Controls.Add(this.hitbox);
             this.Controls.Add(this.namebutton);
             this.Controls.Add(this.nametext);
             this.Controls.Add(this.checkbox_step);
@@ -342,7 +329,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.CheckBox checkbox_step;
         private System.Windows.Forms.TextBox nametext;
         private System.Windows.Forms.Button namebutton;
-        private System.Windows.Forms.CheckBox hitbox;
     }
 }
 
