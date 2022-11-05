@@ -30,11 +30,15 @@ namespace WindowsFormsApp1
             antikbx = "Minecraft.Windows.exe+0x1A7F332",
             antikby = "Minecraft.Windows.exe+0x1A7F33B",
             antikbz = "Minecraft.Windows.exe+0x1A7F344",
+            //hitbox
+            hitboxwidth = "Minecraft.Windows.exe+19E69FF,F3,0F,10,83,08,04,00,00,48,83,C4,20,5B,C3,CC,CC,CC,40",
             //nameshit
             name = "Minecraft.Windows.exe+04926308,0,8,18,88,320",
             namelength = "Minecraft.Windows.exe+04926308,18,18,B8,8E8",
             //step
-            step = "Minecraft.Windows.exe+049262F8,0,18,90,B8,21C"
+            step = "Minecraft.Windows.exe+049262F8,0,18,90,B8,21C",
+            //fov
+            fov = "Minecraft.Windows.exe+0487B460,18,180,18"
             ;
     }
 }
