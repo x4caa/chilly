@@ -1,8 +1,11 @@
-# chilly
+# Chilly
 
 A Minecraft Bedrock Edition external hack
+1.19.31 supported
 
 [Download Here](https://github.com/x4caa/chilly/releases "Releases")
+
+## Features
 
 -timer(undetected - hive(under 2000))
 
@@ -13,6 +16,8 @@ A Minecraft Bedrock Edition external hack
 -noclip(detected - hive)
 
 -step(detected - hive)
+
+-zoom(c) - will make custom keybinds for it
 
 hitbox and fly arent done im too lazy to find pointers
 
