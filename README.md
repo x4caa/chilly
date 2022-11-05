@@ -2,8 +2,7 @@
 
 A Minecraft Bedrock Edition external hack
 
-Download here 
-[I'm an inline-style link with title](https://github.com/x4caa/chilly/releases "Releases")
+[Download Here](https://github.com/x4caa/chilly/releases "Releases")
 
 -timer(undetected - hive(under 2000))
 
