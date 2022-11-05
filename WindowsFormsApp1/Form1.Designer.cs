@@ -59,7 +59,6 @@ namespace WindowsFormsApp1
             // 
             this.checkbox_timer.AccessibleName = "";
             this.checkbox_timer.AutoSize = true;
-            this.checkbox_timer.Enabled = false;
             this.checkbox_timer.Location = new System.Drawing.Point(12, 12);
             this.checkbox_timer.Name = "checkbox_timer";
             this.checkbox_timer.Size = new System.Drawing.Size(52, 17);
@@ -71,7 +70,6 @@ namespace WindowsFormsApp1
             // checkbox_reach
             // 
             this.checkbox_reach.AutoSize = true;
-            this.checkbox_reach.Enabled = false;
             this.checkbox_reach.Location = new System.Drawing.Point(12, 35);
             this.checkbox_reach.Name = "checkbox_reach";
             this.checkbox_reach.Size = new System.Drawing.Size(58, 17);
@@ -83,7 +81,6 @@ namespace WindowsFormsApp1
             // checkbox_fly
             // 
             this.checkbox_fly.AutoSize = true;
-            this.checkbox_fly.Enabled = false;
             this.checkbox_fly.Location = new System.Drawing.Point(12, 58);
             this.checkbox_fly.Name = "checkbox_fly";
             this.checkbox_fly.Size = new System.Drawing.Size(39, 17);
@@ -95,7 +92,6 @@ namespace WindowsFormsApp1
             // checkbox_noclip
             // 
             this.checkbox_noclip.AutoSize = true;
-            this.checkbox_noclip.Enabled = false;
             this.checkbox_noclip.Location = new System.Drawing.Point(12, 81);
             this.checkbox_noclip.Name = "checkbox_noclip";
             this.checkbox_noclip.Size = new System.Drawing.Size(56, 17);
@@ -112,7 +108,7 @@ namespace WindowsFormsApp1
             this.trackbar_timer.Maximum = 5000;
             this.trackbar_timer.Minimum = 1000;
             this.trackbar_timer.Name = "trackbar_timer";
-            this.trackbar_timer.Size = new System.Drawing.Size(104, 17);
+            this.trackbar_timer.Size = new System.Drawing.Size(249, 17);
             this.trackbar_timer.TabIndex = 5;
             this.trackbar_timer.Value = 1000;
             this.trackbar_timer.Scroll += new System.EventHandler(this.trackbar_timer_Scroll);
@@ -126,7 +122,7 @@ namespace WindowsFormsApp1
             this.trackbar_reach.Maximum = 7;
             this.trackbar_reach.Minimum = 3;
             this.trackbar_reach.Name = "trackbar_reach";
-            this.trackbar_reach.Size = new System.Drawing.Size(104, 17);
+            this.trackbar_reach.Size = new System.Drawing.Size(249, 17);
             this.trackbar_reach.TabIndex = 6;
             this.trackbar_reach.Value = 3;
             this.trackbar_reach.Scroll += new System.EventHandler(this.trackbar_reach_Scroll);
@@ -143,7 +139,7 @@ namespace WindowsFormsApp1
             // lbl_reach
             // 
             this.lbl_reach.AutoSize = true;
-            this.lbl_reach.Location = new System.Drawing.Point(186, 39);
+            this.lbl_reach.Location = new System.Drawing.Point(331, 39);
             this.lbl_reach.Name = "lbl_reach";
             this.lbl_reach.Size = new System.Drawing.Size(27, 13);
             this.lbl_reach.TabIndex = 8;
@@ -152,7 +148,7 @@ namespace WindowsFormsApp1
             // lbl_timer
             // 
             this.lbl_timer.AutoSize = true;
-            this.lbl_timer.Location = new System.Drawing.Point(186, 16);
+            this.lbl_timer.Location = new System.Drawing.Point(331, 16);
             this.lbl_timer.Name = "lbl_timer";
             this.lbl_timer.Size = new System.Drawing.Size(27, 13);
             this.lbl_timer.TabIndex = 9;

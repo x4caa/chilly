@@ -1,31 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Memory;
+using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
-using Memory;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
         Mem m = new Mem();
+        public float startingfov;
+
+        [DllImport("user32.dll")]
+        static extern short GetAsyncKeyState(Keys vKey);
         public Form1()
         {
             InitializeComponent();
             tmr_check.Enabled = true;
         }
 
-        void Timer(double timer) 
+        void Timer(double timer)
         {
             m.OpenProcess("minecraft.windows");
-            m.WriteMemory("Minecraft.Windows.exe+3F108D0","double",timer.ToString()); 
+            m.WriteMemory("Minecraft.Windows.exe+3F108D0", "double", timer.ToString());
         }
         public Vector3 Position()
         {
@@ -40,11 +40,38 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             TopMost = true;
+            CheckForIllegalCrossThreadCalls = false;
+            Debug.WriteLine("form loaded");
+
+            if (m != null)
+            {
+                Debug.WriteLine("thread loaded");
+                Thread thread = new Thread(Main) { IsBackground = true };
+                thread.Start();
+                m.OpenProcess("minecraft.windows");
+            }
+        }
+
+        void Main()
+        {
+            startingfov = 70f;
+            while (true)
+            {
+                if (GetAsyncKeyState(Keys.C) < 0)
+                {
+                    m.WriteMemory(Offsets.fov, "float", "30");
+                }
+                else
+                {
+                    m.WriteMemory(Offsets.fov, "float", startingfov.ToString());
+                }
+                Thread.Sleep(10);
+            }
         }
 
         private void checkbox_timer_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkbox_timer.Checked == true) { Timer(trackbar_timer.Value); trackbar_timer.Enabled = true;  }
+            if (checkbox_timer.Checked == true) { Timer(trackbar_timer.Value); trackbar_timer.Enabled = true; }
             else { Timer(1000f); trackbar_timer.Enabled = false; }
         }
 
@@ -61,8 +88,8 @@ namespace WindowsFormsApp1
                 m.OpenProcess("minecraft.windows.exe");
                 m.FreezeValue("Minecraft.Windows.exe+04926308,10,18,b8,a48", "byte", "1");
             }
-            else 
-            { 
+            else
+            {
                 m.UnfreezeValue("Minecraft.Windows.exe+04926308,10,18,b8,a48");
                 m.WriteMemory("Minecraft.Windows.exe+04926308,10,18,b8,a48", "byte", "0");
             }
@@ -72,13 +99,13 @@ namespace WindowsFormsApp1
         {
             float feetyval = m.ReadFloat(Offsets.feety);
             if (checkbox_noclip.Checked == true)
-            { 
+            {
                 m.OpenProcess("minecraft.windows.exe");
                 m.WriteMemory(Offsets.heady, "float", feetyval.ToString());
             }
             else
             {
-                
+
                 m.WriteMemory(Offsets.heady, "float", (feetyval + 1.800000906).ToString());
             }
         }
@@ -98,27 +125,15 @@ namespace WindowsFormsApp1
         private void tmr_check_Tick(object sender, EventArgs e)
         {
             Process[] process = Process.GetProcessesByName("minecraft.windows");
-            if(process.Length == 0)
+            if (process.Length == 0)
             {
-                checkbox_timer.Enabled = false;
-                checkbox_reach.Enabled = false;
-                checkbox_fly.Enabled = false;
-                checkbox_noclip.Enabled = false;
                 lbl_status.Text = "No process";
                 lbl_status.ForeColor = Color.Red;
             }
             else
             {
-                checkbox_timer.Enabled = true;
-                checkbox_reach.Enabled = true;
-                checkbox_fly.Enabled = true;
-                checkbox_noclip.Enabled = true;
-                if (checkbox_timer.Checked == true) { trackbar_timer.Enabled = true; }
-                if (checkbox_reach.Checked == true) { trackbar_reach.Enabled = true; }
                 lbl_status.Text = "Process Found";
                 lbl_status.ForeColor = Color.Green;
-                //textBox1.Text = new Vector3(m.ReadFloat("Minecraft.Windows.exe+04926308,20,0,18,B8,3F0"), m.ReadFloat("Minecraft.Windows.exe+04926308,20,0,20,C8,3F4"), m.ReadFloat("Minecraft.Windows.exe+04926308,20,0,18,B8,3F8")).ToString();
-                //Debug.WriteLine(new Vector3(m.ReadFloat("Minecraft.Windows.exe+04926308,20,0,18,B8,3F0"), m.ReadFloat("Minecraft.Windows.exe+04926308,20,0,20,C8,3F4"), m.ReadFloat("Minecraft.Windows.exe+04926308,20,0,18,B8,3F8")).ToString());
             }
         }
 
