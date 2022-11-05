@@ -1,7 +1,6 @@
 # Chilly
 
-A Minecraft Bedrock Edition external hack
-1.19.31 supported
+A Minecraft Bedrock Edition external hack | 1.19.31 supported
 
 [Download Here](https://github.com/x4caa/chilly/releases "Releases")
 
