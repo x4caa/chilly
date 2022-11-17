@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             antikbz = "Minecraft.Windows.exe+0x1A7F344",
             //nameshit
             name = "Minecraft.Windows.exe+04926308,0,8,18,88,320",
-            namelength = "Minecraft.Windows.exe+04926308,18,18,B8,8E8",
+            namelength = "Minecraft.Windows.exe+049262F8,0,18,88,330",
             //step
             step = "Minecraft.Windows.exe+049262F8,0,18,90,B8,21C",
             //fov

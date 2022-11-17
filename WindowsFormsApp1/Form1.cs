@@ -185,6 +185,8 @@ namespace WindowsFormsApp1
             m.OpenProcess("minecraft.windows.exe");
             m.WriteMemory(Offsets.name, "string", nametext.Text);
             m.WriteMemory(Offsets.namelength, "int", nametext.Text.Length.ToString());
+            Debug.WriteLine(m.ReadInt(Offsets.namelength).ToString());
+            Debug.WriteLine(nametext.Text.Length.ToString());
 
         }
     }
