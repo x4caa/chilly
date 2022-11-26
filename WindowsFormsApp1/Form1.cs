@@ -46,13 +46,16 @@ namespace WindowsFormsApp1
             if (m != null)
             {
                 Debug.WriteLine("thread loaded");
-                Thread thread = new Thread(Main) { IsBackground = true };
-                thread.Start();
+                Thread fovthread = new Thread(fov) { IsBackground = true };
+                Thread tpthread = new Thread(pixelparadiseswimming) { IsBackground = true };
+                fovthread.Start();
+                tpthread.Start();
+                Debug.WriteLine("thread started successfully");
                 m.OpenProcess("minecraft.windows");
             }
         }
 
-        void Main()
+        void fov()
         {
             startingfov = 70f;
             while (true)
@@ -66,6 +69,72 @@ namespace WindowsFormsApp1
                     m.WriteMemory(Offsets.fov, "float", startingfov.ToString());
                 }
                 Thread.Sleep(10);
+            }
+        }
+        
+        void pixelparadiseswimming()
+        {
+            //thread sleep time
+            int x = 40;
+            while (true)
+            {// map 1
+                if (GetAsyncKeyState(Keys.LButton) < 0 && GetAsyncKeyState(Keys.Y) < 0)
+                {
+                    //checkpoint 1
+                    
+                    Thread.Sleep(3050);
+                    Debug.WriteLine("keys pressed");
+                    m.WriteMemory(Offsets.feetx, "float", "100");
+                    m.WriteMemory(Offsets.headx, "float", (100f + 0.7168208957).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feety, "float", "22");
+                    m.WriteMemory(Offsets.heady, "float", (22f + 1.799999952).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feetz, "float", "120");
+                    m.WriteMemory(Offsets.headz, "float", (120f + 0.7140606046).ToString());
+                    Thread.Sleep(x);
+                    Debug.WriteLine("checkpoint 1");
+                    //checkpoint 2
+                    m.WriteMemory(Offsets.feetx, "float", "86.7");
+                    m.WriteMemory(Offsets.headx, "float", (87.7f + 0.7168208957).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feety, "float", "21");
+                    m.WriteMemory(Offsets.heady, "float", (21f + 1.799999952).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feetz, "float", "134.5");
+                    m.WriteMemory(Offsets.headz, "float", (134.5f + 0.7140606046).ToString());
+                    Thread.Sleep(x);
+                    //checkpoint 3
+                    m.WriteMemory(Offsets.feetx, "float", "65.9");
+                    m.WriteMemory(Offsets.headx, "float", (65.9f + 0.7168208957).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feety, "float", "20");
+                    m.WriteMemory(Offsets.heady, "float", (20f + 1.799999952).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feetz, "float", "123.6");
+                    m.WriteMemory(Offsets.headz, "float", (123.6f + 0.7140606046).ToString());
+                    Thread.Sleep(x);
+                    //checkpoint 4
+                    m.WriteMemory(Offsets.feetx, "float", "53.7");
+                    m.WriteMemory(Offsets.headx, "float", (53.7f + 0.7168208957).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feety, "float", "23");
+                    m.WriteMemory(Offsets.heady, "float", (23f + 1.799999952).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feetz, "float", "143.5");
+                    m.WriteMemory(Offsets.headz, "float", (143.5f + 0.7140606046).ToString());
+                    Thread.Sleep(x);
+                    //checkpoint 5
+                    m.WriteMemory(Offsets.feetx, "float", "49");
+                    m.WriteMemory(Offsets.headx, "float", (49f + 0.7168208957).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feety, "float", "20");
+                    m.WriteMemory(Offsets.heady, "float", (20f + 1.799999952).ToString());
+                    Thread.Sleep(x);
+                    m.WriteMemory(Offsets.feetz, "float", "134");
+                    m.WriteMemory(Offsets.headz, "float", (134f + 0.7140606046).ToString());
+                    Thread.Sleep(x);
+                }
             }
         }
 
