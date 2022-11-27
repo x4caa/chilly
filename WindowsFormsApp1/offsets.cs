@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Numerics;
-
-namespace WindowsFormsApp1
+﻿namespace WindowsFormsApp1
 {
     public class Offsets
     {
@@ -36,7 +29,9 @@ namespace WindowsFormsApp1
             //step
             step = "Minecraft.Windows.exe+049262F8,0,18,90,B8,21C",
             //fov
-            fov = "Minecraft.Windows.exe+0487B460,18,180,18"
+            fov = "Minecraft.Windows.exe+0487B460,18,180,18",
+            //timer
+            timer = "Minecraft.Windows.exe+3F108D0"
             ;
     }
 }

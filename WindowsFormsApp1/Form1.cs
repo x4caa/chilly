@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
         void Timer(double timer)
         {
             m.OpenProcess("minecraft.windows");
-            m.WriteMemory("Minecraft.Windows.exe+3F108D0", "double", timer.ToString());
+            m.WriteMemory(Offsets.timer, "double", timer.ToString());
         }
         public Vector3 Position()
         {
@@ -55,8 +55,11 @@ namespace WindowsFormsApp1
             }
         }
 
-        void fov()
+        async void fov()
         {
+            //TODO: add fov changer QOL
+            //NVM FUCK THIS I HATE LIFE
+            //read mem for starting fov instead of setting to default of 70
             startingfov = 70f;
             while (true)
             {
@@ -68,10 +71,10 @@ namespace WindowsFormsApp1
                 {
                     m.WriteMemory(Offsets.fov, "float", startingfov.ToString());
                 }
-                Thread.Sleep(10);
+                Thread.Sleep(1);
             }
         }
-        
+
         void pixelparadiseswimming()
         {
             //thread sleep time
@@ -81,7 +84,7 @@ namespace WindowsFormsApp1
                 if (GetAsyncKeyState(Keys.LButton) < 0 && GetAsyncKeyState(Keys.Y) < 0)
                 {
                     //checkpoint 1
-                    
+
                     Thread.Sleep(3050);
                     Debug.WriteLine("keys pressed");
                     m.WriteMemory(Offsets.feetx, "float", "100");
@@ -201,6 +204,7 @@ namespace WindowsFormsApp1
             }
             else
             {
+
                 lbl_status.Text = "Process Found";
                 lbl_status.ForeColor = Color.Green;
             }
