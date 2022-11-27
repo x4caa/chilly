@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        async void fov()
+        void fov()
         {
             //TODO: add fov changer QOL
             //NVM FUCK THIS I HATE LIFE
