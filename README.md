@@ -18,10 +18,9 @@ A Minecraft Bedrock Edition external hack | 1.19.31 supported
 
 -zoom(c) - will make custom keybinds for it
 
-hitbox and fly arent done im too lazy to find pointers
+fly isnt done im too lazy to find pointers
 
-name changer is scuffed
-
-![image](https://user-images.githubusercontent.com/87253179/200104764-73eb69d6-089a-4630-b6d1-4d6731471ef7.png)
+![chillyui](https://user-images.githubusercontent.com/87253179/205455876-c9bcd687-e564-4a0b-96b8-490130693157.png)
 
 -xacaa
+
