@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.checkbox_timer = new System.Windows.Forms.CheckBox();
             this.checkbox_reach = new System.Windows.Forms.CheckBox();
             this.checkbox_fly = new System.Windows.Forms.CheckBox();
@@ -364,7 +365,6 @@ namespace WindowsFormsApp1
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(3)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(289, 274);
-            this.ControlBox = false;
             this.Controls.Add(this.ztext);
             this.Controls.Add(this.ytext);
             this.Controls.Add(this.xtext);
@@ -386,9 +386,9 @@ namespace WindowsFormsApp1
             this.Font = new System.Drawing.Font("Mojangles", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(184)))), ((int)(((byte)(244)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Chilly";
             this.TopMost = true;
