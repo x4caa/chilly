@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
             m.OpenProcess("minecraft.windows");
             m.WriteMemory("Minecraft.Windows.exe+3F10808", "float", reach.ToString());
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
             TopMost = true;
             CheckForIllegalCrossThreadCalls = false;
@@ -253,13 +253,13 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void namebutton_Click(object sender, EventArgs e)
+        private void lbl_reach_Click(object sender, EventArgs e)
         {
-            m.OpenProcess("minecraft.windows.exe");
-            m.WriteMemory(Offsets.name, "string", nametext.Text);
-            m.WriteMemory(Offsets.namelength, "int", nametext.Text.Length.ToString());
-            Debug.WriteLine(m.ReadInt(Offsets.namelength).ToString());
-            Debug.WriteLine(nametext.Text.Length.ToString());
+
+        }
+
+        private void lbl_status_Click(object sender, EventArgs e)
+        {
 
         }
     }
