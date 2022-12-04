@@ -185,13 +185,11 @@ namespace WindowsFormsApp1
         private void trackbar_timer_Scroll(object sender, EventArgs e)
         {
             Timer(trackbar_timer.Value);
-            lbl_timer.Text = trackbar_timer.Value.ToString();
         }
 
         private void trackbar_reach_Scroll(object sender, EventArgs e)
         {
             Reach(trackbar_reach.Value);
-            lbl_reach.Text = trackbar_reach.Value.ToString();
         }
 
         private void tmr_check_Tick(object sender, EventArgs e)
@@ -201,12 +199,17 @@ namespace WindowsFormsApp1
             {
                 lbl_status.Text = "No process";
                 lbl_status.ForeColor = Color.Red;
+
             }
             else
             {
-
                 lbl_status.Text = "Process Found";
                 lbl_status.ForeColor = Color.Green;
+                lbl_timer.Text = m.ReadDouble(Offsets.timer).ToString();
+                trackbar_timer.Value = Convert.ToInt32(m.ReadDouble(Offsets.timer));
+                lbl_reach.Text = m.ReadFloat(Offsets.reach).ToString();
+                trackbar_reach.Value = Convert.ToInt32(m.ReadFloat(Offsets.reach));
+                Debug.WriteLine("changing timer text");
             }
         }
 
